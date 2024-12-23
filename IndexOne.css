@@ -1,0 +1,747 @@
+/* ************************************** */
+/* HEADER */
+/* ************************************** */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdf2e9;
+  /* we want to make the header sticky means that when we scroll down the page the header should not move it should stay to its postition 
+and to dod that it is a bit easy to make the height fixed  */
+
+  /* making the header sticky  */
+  height: 9.6rem;
+  padding: 0 4.8rem;
+}
+.logo {
+  height: 2.4rem;
+}
+
+/* ************************************** */
+/*NAVIGATION */
+/* ************************************** */
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+.main-nav-link:link,
+.main-nav-link:visited {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  /* since the anchor elements are inline elements and also we want to apply the padding and width properties
+  in both of teh directions */
+  display: inline-block;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #cf711f;
+}
+.main-nav-link.nav-call-to-action:link,
+.main-nav-link.nav-call-to-action:visited {
+  padding: 1.2rem 2.4rem;
+  border-radius: 0.9rem;
+  background-color: #e67e22;
+  color: #fff;
+}
+.main-nav-link.nav-call-to-action:hover,
+.main-nav-link.nav-call-to-action:active {
+  background-color: #cf711f;
+}
+/* ************************************** */
+/* HERO SECTION */
+/* ************************************** */
+
+.section-hero {
+  /* set the background of the entire hero section  */
+  background-color: #fdf2e9;
+  /* when you have a background color use paddings as well */
+  padding: 9.6rem;
+  height: 100vh;
+}
+.hero {
+  /* lets giv it a fixed width for the width we want to give it like 1300px expressed in rem */
+  max-width: 130rem;
+  margin: 0 auto;
+  display: grid;
+  /* remember how we can make the element to contain the size of the width by changing hte width propery oto maxwidth */
+  /* width: 130rem; */
+
+  grid-template-columns: 1fr 1fr;
+  gap: 9.6rem;
+  /* center the hero section at the center of hte viewport by the margin trick  */
+
+  /* to cente the herotext box vertically we can use the align items: center; */
+  align-items: center;
+  padding: 0 3.2rem;
+}
+
+.hero-image {
+  /* since the image is really big we should give it a width of 100% which is to make it fill the entire container */
+  width: 100%;
+}
+/* use the mketinitsandshades.com 
+to have the tints and shades of a given color we can just copy the hex code of the color and get the 
+tint and shade version of that specific color */
+
+.hero-description {
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 3.2rem;
+}
+
+/* to the buttons  */
+
+.delivered-imgs {
+  display: flex;
+}
+
+.delivered-meals {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 8rem;
+}
+
+.delivered-imgs img {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  /* now the main takeaway from this is that we wanted to make the images slide one over the other overlapping one over the other 
+  inorder to do that you might think we can make the gap of their flex container a negative value but that does not work the real solution 
+  is to use the margin element of the images and set to a negative value */
+
+  /* like the following one */
+
+  margin-right: -1.6rem;
+  /* duting overlapping of images it si a good idea to add some border around them with the same color with the backgtound of the container to make them more visible */
+  border: 4px solid #fdf2e9; /* and it makes it so coooool*/
+}
+
+.delivered-imgs img:last-child {
+  margin-right: 0;
+  /* we don't want to apply the negative marign to the last elemetn of the images  */
+}
+
+.delivered-texts {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* using the decendant selector fot the number in the text  */
+
+.delivered-texts span {
+  color: #cf711f;
+  font-weight: 700;
+  /* use coolors.com to check the contrast  */
+}
+
+/* ****************************************************** */
+/* FEATURED IN SECCTION CSS */
+/* ****************************************************** */
+.section-featured {
+  padding: 4.8rem 0;
+}
+.logos {
+  display: flex;
+  justify-content: space-between;
+}
+.logos img {
+  height: 3.2rem;
+  /* since we are using text images we can make them have kind of the same color by using the 
+  filter property of csss */
+  filter: brightness(0);
+  opacity: 60%;
+}
+.heading-featured-in {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  margin-top: 9.6rem;
+  margin-bottom: 2.4rem;
+  text-align: center;
+  color: #888;
+}
+/* ****************************************************** */
+/* HOW IT WORKS SECTION CSS */
+/* ****************************************************** */
+
+.step-image {
+  max-width: 35%;
+  border-radius: 4rem;
+}
+.step-image-box {
+  /* we wanted to center the image of the phone inside fo its container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.step-number {
+  font-size: 8.6rem;
+  font-weight: 600;
+  color: #ddd;
+  margin-bottom: 1.2rem;
+}
+
+.step-description {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+/* beforer and after pseudo elements can not be added to images because image is 
+not an element which can have childs even in the html itself   */
+.step-image-box::before {
+  /*  to make it apear on the page this psuedo element we have to give it some kind of content it can be 
+empty but there should be a content for it*/
+  content: " ";
+  /* we have to set the display property to block if we want to make it some kind of shape or something like that cause it is by default an inline element */
+  display: block;
+  width: 60%; /* 60% means 60% of the widht of the parent element*/
+  /* height: 60%;  this doesnot work giving the height and the width the same way like by percentages it does not work and 
+  the shape is not visible now if we don't find another way to defint the height of the shape */
+
+  /* the tricek is to make the padding-bottom to 60% then it would give us the same result as we gave it its height 60% */
+
+  /* it is 60% of the padding width */
+  padding-bottom: 60%;
+  /* now techniqually the height is 0 but since we gave it the padding it is going to appear as we want it to be  */
+
+  border-radius: 50%;
+  background-color: #fdf2e9;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* now the circle shape is on the top of the image and we wnat the opposite of that we want the image to be hte top object */
+  /* and we can do that by using the Z index so the thing is the element with the lowest Z index value will be at the bottom so by givig the shape a negative 
+  Z-index we can achive what we wanted  */
+  z-index: -2;
+}
+
+/* now we want to add another small cirlcle around the same image so we are going to use another psuedo element again since we ahve used the before pseudo element we can not use it 
+again
+ */
+
+.step-image-box::after {
+  content: " ";
+  display: block;
+  width: 45%;
+  padding-bottom: 45%;
+  border-radius: 50%;
+  background-color: #ca8243;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+/* ****************************************************** */
+/* MEALS SECTIONS */
+/* ****************************************************** */
+.section-meals {
+  padding: 9.6rem 0;
+}
+.meal {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.14);
+  border-radius: 1.2rem;
+  overflow: hidden; /* it makes the border radius teo work on the image */
+  /* we made the meal elements to transforrm or move in the Y direction and now the remaining 
+  thing is making that move smooth by using the transition property as follows  */
+  transition: all 3s;
+}
+.meal-img {
+  width: 100%;
+}
+.meal-tags {
+  margin-bottom: 1.2rem;
+}
+.meal-content {
+  padding: 3.2rem 4.8rem 4.8rem 4.8rem;
+}
+
+.tag {
+  /* the following are like one most of the defining properties of a tag element */
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #333;
+  font-weight: 600;
+  border-radius: 0.9rem;
+}
+
+.tag--vegetarian {
+  background-color: #51cf66;
+}
+.tag--paleo {
+  background-color: #ca8243;
+}
+
+.tag--vegan {
+  background-color: #888;
+}
+.meal-title {
+  font-size: 2rem;
+  color-interpolation-filters: #333;
+  font-weight: 600;
+  margin-bottom: 3.2rem;
+}
+.meal-attributes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.meal-attribute {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+.meal-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #e67e22;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.all-recipes {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.meal:hover {
+  /* when we hover around the elemetn it moves 2rem up and to the right  */
+  transform: translate(2rem, 2rem);
+  /* we can also use the translateY move the element in the Y direction only  */
+  transform: translateY(10rem);
+  /* we can also control the shadow in the hover state */
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.14);
+}
+
+/* ******************************************
+TESTIMONIAL SECTION 
+***********************************************/
+
+.section-testimonials {
+  background-color: #fdf2e9;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  /* before making this below modification when we resize the screen the vertical space 
+  between the gallery items become really wide and the images disappear to solve thsi we can 
+  use the align items property and make it to center  */
+  align-items: center;
+}
+.testimonial-container {
+  padding: 9.6rem;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 4.8rem;
+  column-gap: 6.4rem;
+}
+.testimoinal-img {
+  /* since we are going to use the images as a small display thing we can give them really fixed width */
+  width: 6.4rem;
+  border-radius: 50%;
+}
+
+.testimonial img {
+  width: 6.4rem;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+}
+
+.testimonial-text {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  margin-bottom: 1.6rem;
+  color: #555;
+}
+
+.testimonial-name {
+  font-size: 1.6rem;
+  color: #6f6f6f;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* gap: 1.6rem; */
+  padding: 1.6rem;
+}
+
+.gallery-item img {
+  /* we are making the images a block level elements because we want to remove the white space between the images
+  cause they are inline blockelements by nature they will have a white space between then and we don not want that in our gallery  */
+  width: 100%;
+  display: block;
+  transition: all 0.4s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.9);
+}
+
+.gallery-item {
+  /* if you saw carefully when we use the hover state on the images that are inside of the gallery-item and 
+  make them bigger by scaling them up they kinda overflow their parent container which is the grid item so to remove 
+  that and to make teh hover state more cool we can do the following */
+  overflow: hidden;
+}
+
+/* ******************************************
+PRICING SECTION 
+******************************************/
+
+.section-pricing {
+}
+.plan-header {
+  text-align: center;
+  margin-bottom: 6.4rem;
+}
+.pricing-container {
+  /* justify-items: end; */
+}
+
+.plan-name {
+  color: #cf711f;
+  font-weight: 600;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 3.2rem;
+}
+.plan-text {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #6f6f6f;
+}
+.plan-price {
+  font-size: 6.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.6rem;
+}
+
+.plan-price span {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-right: 0.8rem;
+}
+
+.plan-sign-up {
+  text-align: center;
+  margin-top: 3.2rem;
+}
+
+.pricing-plan {
+  background-color: #fdf2e9;
+  border-radius: 0.9rem;
+  width: 70%;
+}
+.pricing-plan-1 {
+  /* we wanted to decerase the size of the cards and when we do that or lower the percentages of the sizes in to smaller values 
+   then anotehr problem has rised which is the gap between them cause the cards are not using the whole width of their container there 
+   is a gap remaining and it looks weird 
+   inorder to remove that gap and make them have only the gap given by the grid container only we have to justify the first card to the 
+   end of its contaiener and the second one to the start of its container you can see how it is done  */
+  justify-self: self-end;
+  /* deemphasizing this one to make the  user give more attention to the expensive one  */
+  background-color: #fff;
+  border: 2px solid #fdf2e9;
+  /* because we add 2 more pixels for the padding we should decrease the padding relateive to the other one by '
+  just 2 pixels */
+  padding: 4.2rem;
+}
+
+.pricing-plan-2 {
+  justify-self: self-start;
+  padding: 4.4rem;
+  position: relative;
+  overflow: hidden; /* we are using the overflow hidden to make the melkoret neger at the edge of the shape */
+}
+
+/* now lets add the best value ribbon for pricing-plan-2 using the pseudo elemetn like the before */
+
+.pricing-plan-2::before {
+  content: "Best-Value";
+  position: absolute;
+  padding: 0.9rem 4rem;
+  background-color: red;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 900;
+  top: 3rem;
+  right: -4rem;
+  transform: rotate(45deg);
+  color: #fdf2e9;
+}
+
+.pricing-plan ul {
+  gap: 3.6rem;
+}
+
+/* we want the user to select the pricing card which is expensive so we can gaive it more emphasize and we can do that 
+deemphasizing the other one using dim colors or somthing that steal attention from it  */
+
+.pricing-plan-1 {
+}
+
+.plan-details {
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  text-align: center;
+}
+
+/* ******************************************
+FEATURE BLOCK
+******************************************/
+.feature-icon {
+  color: #e67e22;
+  height: 3.2rem;
+  width: 3.2rem;
+  margin-bottom: 3.2rem;
+  background-color: #fdf2e9;
+  padding: 0.9rem;
+  border-radius: 50%;
+}
+.feature-tile {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 800;
+  margin-bottom: 1.6rem;
+}
+.feature-text {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* ******************************************
+CTA SECTION 
+******************************************/
+
+.section-cta {
+  /* top right bottom left  */
+  padding: 4.8rem 0 12.8rem 0;
+}
+.cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background-color: #e67e22;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.4);
+  border-radius: 0.9rem;
+  margin-top: 9.6rem;
+  overflow: hidden;
+
+  /* we cam giv it somthing like a gradient by using the background-image property and give it two colors for the 
+  lienear graient function */
+  /*  we can also specify the direction in which the gradient is going to floe by default it is from top to bottom 
+  but by passing a 90deg as the first valuse we can make it horizontal and 180deg is for the vertical
+  
+  we can also use most persuasive one like to right  or to left or to right-bottom or to right-top ... and it flows to the right it is also the first value as teh degree one */
+
+  background-image: linear-gradient(
+    to right-bottom,
+    rgba(235, 151, 78, 0.575),
+    rgba(230, 125, 34, 0.73)
+  );
+}
+
+.cta-img-box {
+  background-image: linear-gradient(
+      to right,
+      rgba(235, 151, 78, 0.575),
+      rgba(241, 172, 111, 0.683)
+    ),
+    url(../Images/Meals/anna-pelzer-IGfIGP5ONV0-unsplash.jpg);
+  background-size: cover;
+}
+.cta-text-box {
+  color: #45260a; /* as a color for the texts we are using the darkest or the shdest version of the background color 
+  and it is far more better and more natural than just using the black or other form of graycolor*/
+  padding: 3rem 6.4rem 6.4rem 6.4rem;
+}
+
+.cta .heading-secondary {
+  color: #45260a;
+  margin-bottom: 3.2rem;
+}
+
+.cta-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 4.8rem;
+}
+
+/* stylling the form area here */
+.cta-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 3rem;
+  column-gap: 4.8rem;
+}
+.cta-form label {
+  /* the fist thing is we want the label to have its own line which can be done by using the display: block; */
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.6rem;
+}
+
+.cta-form input,
+.cta-form select {
+  /* we can give htem a width and height to incrasw the size and also a padding */
+  width: 100%;
+  padding: 1.2rem;
+  /* we can also incerease the font size of the text that we will witre inside of these inpyt vozes */
+  font-size: 1.6rem;
+  font-family: inherit; /*we are forcing the input elements to inherit the font family of their parent element cause by defaulr they do not */
+  /* we can also force it to ingerit the color of its container or the cta box i this case by inherting the color */
+  color: inherit;
+  border: none;
+
+  background-color: #fdf2e9;
+  border-radius: 0.9rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+/* we can even edit the color for the placeholder that is inside of the textbox by using a new pseudo element */
+.cta-form input::placeholder {
+  color: #aaa;
+}
+
+.btn-form {
+  /* background-color: #e67e22; */
+  font-size: 2rem;
+
+  display: inline-block; /* we want to give them vertical padding and also define the width and the height that is why we are making them inline block */
+
+  border-radius: 9px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  /* put transion on the orginal state of the element  */
+  background-color: #45260a;
+  align-self: flex-end;
+  color: #fdf2e9;
+  padding: 1.2rem;
+  transition: all 1s; /* all means we want to aniate both the color and the background color and one second is the duration of the animation
+  as we hover around it it is going to change the color over one second that is the purpose of all this transition  
+  use this trick every time you are using hover states for your buttons 
+  */
+}
+
+.btn-form:hover {
+  background-color: #fff;
+  color: #555;
+}
+
+.cta *:focus {
+  outline: none;
+  /* if we don't want to show the user which element is being ourlined by the blue border thing when we click the tab from the keyBoard  we can tell he ir she by using some other signal */
+  /* outline: 4px dotted #e67e22;
+    outline-offset: 8px;
+   this is also a good technique to use to tell the user where the current focus is but we have another better method of doing it 
+   which is by using box shadow 
+    */
+  box-shadow: 0 0 0 0.8rem rgba(235, 242, 232, 0.575); /* it does rap around the buttons which look more natural than just a border */
+}
+
+/* ******************************************
+FOOTER SECTIONA
+******************************************/
+
+.footer {
+  padding: 12.8rem;
+  border-top: 1px solid #eee;
+}
+.social-links {
+  display: flex;
+  gap: 2.4rem;
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: 3.2rem;
+}
+.social-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.copyright {
+  font-size: 1.4rem;
+  color: #767676;
+  line-height: 1.6;
+  margin-top: auto;
+}
+
+/*  by the way this is a damn good trick if you want to puch one element to the sides in a flex container with out using 
+justify and align and also to the edge of the sides top bottom right left 
+
+now we want the copyright text to appear at the bottom of the container to align it at the end with 
+the other ocolumns and for that we are going to use flex box with respect to margin
+to do that firs we will make the container which is the logo-col a flex conatiner and then t
+we will give a margin-top: auto; value for the element we want to push ot the bottom which is the copyright text
+*/
+.logo-col {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 4.4rem;
+  color: #555;
+}
+.contacts {
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.address {
+  margin-bottom: 2.4rem;
+}
+
+.footer-navigaiton {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #767676;
+  transition: all 0.3s;
+}
+.footer-link:hover,
+.footer-link:active {
+  color: #555;
+}
